@@ -1,0 +1,97 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.ticket-card {
+  @include card;
+  display: flex;
+  flex-direction: column;
+  gap: $espaciado-md;
+  border-left: 4px solid $color-primario;
+  min-height: 200px;
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(230, 242, 255, 0.3) 100%);
+
+  &:focus-within {
+    outline: 2px solid $color-primario;
+    outline-offset: 2px;
+  }
+
+  &__header {
+    @include flex-between;
+    align-items: flex-start;
+  }
+
+  &__icon {
+    font-size: 24px;
+    min-width: 30px;
+  }
+
+  &__estado {
+    font-size: 12px;
+    font-weight: $fuente-weight-bold;
+    padding: $espaciado-xs $espaciado-sm;
+    border-radius: $border-radius-sm;
+    text-transform: uppercase;
+
+    &--abierto {
+      background-color: #e3f2fd;
+      color: #1976d2;
+    }
+
+    &--crítico {
+      background-color: #ffebee;
+      color: #c62828;
+    }
+
+    &--resuelto {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $espaciado-sm;
+  }
+
+  &__nombre {
+    font-size: 18px;
+    font-weight: $fuente-weight-semibold;
+    color: $color-texto;
+    @include truncate-text(2);
+  }
+
+  &__codigo {
+    font-size: 13px;
+    color: $color-texto-claro;
+    margin: 0;
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding-top: $espaciado-md;
+    border-top: 1px solid $color-border;
+  }
+
+  &__cantidad {
+    display: inline-flex;
+    align-items: center;
+    gap: $espaciado-sm;
+    font-size: 14px;
+    color: $color-texto;
+
+    strong {
+      color: $color-primario;
+      font-size: 18px;
+    }
+  }
+
+  @include responsive-tablet {
+    padding: $espaciado-md;
+  }
+
+  @include responsive-mobile {
+    padding: $espaciado-md;
+  }
+}

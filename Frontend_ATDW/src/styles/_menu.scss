@@ -1,0 +1,58 @@
+.menu-nav {
+  background-color: $color-primario;
+  padding: 15px;
+
+  ul {
+    display: flex; 
+    align-items: center;
+    gap: $espaciado;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo {
+    height: 50px;
+    width: auto;
+    margin-right: auto;
+  }
+
+  li {
+    a {
+      color: $color-texto-menu;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+
+      &:hover {
+        color: $color-hover;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  nav {
+    ul {
+      gap: 15px;
+    }
+
+    .logo {
+      width: 100px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 80px;
+    }
+  }
+}

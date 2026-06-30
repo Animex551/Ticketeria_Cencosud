@@ -1,0 +1,222 @@
+/* _TicketDetail.scss */
+
+.ticket-detail-page {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  background: #f5f5f5;
+  padding: 30px;
+  gap: 22px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+// Reutilizamos la estructura del menú lateral de administración
+.admin-menu {
+  background: #f5f5f5;
+
+  .admin-title {
+    background: #0b63ce;
+    color: white;
+    padding: 28px 20px;
+    margin-bottom: 22px;
+    text-align: center;
+
+    h2 {
+      color: white;
+      margin-bottom: 8px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+    p {
+      color: white;
+    }
+  }
+
+  button {
+    width: 100%;
+    display: block;
+    background: white;
+    color: #111;
+    border: none;
+    border-left: 6px solid #0b63ce;
+    padding: 18px;
+    margin-bottom: 14px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+
+    &:hover {
+      background: #f1f5f9;
+    }
+  }
+}
+
+// Contenedor principal de la información del ticket
+.ticket-main-content {
+  background: white;
+  border: 1px solid #d7dce3;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .ticket-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f4f8;
+    padding-bottom: 18px;
+
+    h2 {
+      font-size: 26px;
+      color: #111;
+      margin: 0;
+    }
+
+    .btn-regresar {
+      background: #0b63ce;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:hover {
+        background: #084ca3;
+      }
+    }
+  }
+
+  // Tarjeta de información estructurada
+  .ticket-info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      label {
+        font-size: 13px;
+        text-transform: uppercase;
+        color: #666;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+      }
+
+      p {
+        font-size: 16px;
+        color: #111;
+        margin: 0;
+      }
+    }
+
+    // Distribución en columnas para los datos secundarios
+    .ticket-grid-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      background: #f8fafc;
+      padding: 20px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+    }
+
+    // Indicador visual de la prioridad (Sincronizado con _Admin.scss)
+    .prioridad-indicator-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+
+      .indicador-dot {
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        border-radius: 2px; // Cuadrados como en tu tabla original
+        
+        &.verde { background: #22c55e; }
+        &.amarillo { background: #facc15; }
+        &.rojo { background: #ef4444; }
+      }
+
+      span {
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+
+    // Estilo del tag de Estado
+    .status-badge {
+      display: inline-block;
+      background: #0b63ce;
+      color: white;
+      padding: 4px 12px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 2px;
+    }
+
+    // Caja de descripción grande
+    .description-block {
+      background: #fdfdfd;
+      border: 1px solid #d7dce3;
+      padding: 16px;
+      border-radius: 4px;
+      min-height: 120px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      color: #333;
+      font-size: 15px;
+    }
+  }
+}
+.acciones-tecnico {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.acciones-tecnico button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Botón "Tomar Ticket" (El primero que aparece) */
+.acciones-tecnico button:first-child {
+  background-color: #3498db; /* Azul */
+}
+
+/* Botón "Finalizar Ticket" (Si aparece como segundo) */
+.acciones-tecnico button:nth-child(2) {
+  background-color: #27ae60; /* Verde */
+}
+
+/* Efecto al pasar el mouse */
+.acciones-tecnico button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.acciones-tecnico button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .ticket-detail-page {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+}

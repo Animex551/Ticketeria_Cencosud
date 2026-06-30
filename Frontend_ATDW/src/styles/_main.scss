@@ -1,0 +1,139 @@
+@import './variables';
+@import './mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $fuente-base;
+  font-size: $fuente-size-base;
+  color: $color-texto;
+  background-color: $color-fondo;
+  line-height: 1.6;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+
+  @include responsive-desktop {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Reset de enlaces
+a {
+  color: $color-primario;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-primario-dark;
+  }
+
+  &:focus {
+    outline: 2px solid $color-primario;
+    outline-offset: 2px;
+  }
+}
+
+// Tipografías
+h1 {
+  font-size: $fuente-size-h1;
+  font-weight: $fuente-weight-bold;
+  margin-bottom: $espaciado-md;
+  color: $color-texto;
+}
+
+h2 {
+  font-size: $fuente-size-h2;
+  font-weight: $fuente-weight-bold;
+  margin-bottom: $espaciado-md;
+  color: $color-texto;
+}
+
+h3 {
+  font-size: $fuente-size-h3;
+  font-weight: $fuente-weight-semibold;
+  margin-bottom: $espaciado-sm;
+  color: $color-texto;
+}
+
+p {
+  color: $color-texto-claro;
+  margin-bottom: $espaciado-md;
+}
+
+// Botones globales
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn-primario {
+  @include btn-primario;
+}
+
+.btn-secundario {
+  @include btn-secundario;
+}
+
+// Contenedores
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $espaciado-md;
+}
+
+// Utilidades
+.mt-1 { margin-top: $espaciado-sm; }
+.mt-2 { margin-top: $espaciado-md; }
+.mt-3 { margin-top: $espaciado-lg; }
+
+.mb-1 { margin-bottom: $espaciado-sm; }
+.mb-2 { margin-bottom: $espaciado-md; }
+.mb-3 { margin-bottom: $espaciado-lg; }
+
+.p-1 { padding: $espaciado-sm; }
+.p-2 { padding: $espaciado-md; }
+.p-3 { padding: $espaciado-lg; }
+
+// Accesibilidad
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.app-header {
+  grid-area: header;
+  background-color: $color-secundario;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  
+  .app-logo {
+    height: 80px;      // Puedes subir o bajar este valor a tu gusto (ej. 60px, 100px)
+    width: auto;       // Mantiene la proporción original de la imagen
+    max-width: 200px;  // Pone un límite máximo por si la pantalla es muy pequeña
+    object-fit: contain; 
+  }
+}

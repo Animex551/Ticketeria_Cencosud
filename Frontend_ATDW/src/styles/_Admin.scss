@@ -1,0 +1,217 @@
+.admin-page {
+ 
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  background: #f5f5f5;
+  padding: 30px;
+  gap: 22px;
+}
+
+/* Contenedor de los filtros */
+.period-filters {
+  display: flex;
+  gap: 10px; /* Espacio entre botones */
+  margin-bottom: 20px;
+}
+
+/* Estilo base de los botones */
+.period-filters button {
+  padding: 8px 20px;
+  border-radius: 20px; /* Forma de píldora */
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.3s ease; /* Suaviza el cambio de color */
+}
+
+/* Efecto al pasar el mouse */
+.period-filters button:hover {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+/* Estilo cuando el botón está activo (sin cambiar lógica) */
+.period-filters button.active {
+  background-color: #3498db; /* Azul tipo Dashboard */
+  color: white;
+  border-color: #3498db;
+  box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2); /* Sombreado suave */
+}
+
+.admin-menu {
+  background: #f5f5f5;
+  
+
+  .admin-title {
+    background: #0b63ce;
+    color: white;
+    padding: 28px 20px;
+    margin-bottom: 22px;
+    text-align: center;
+
+    h2 {
+      color: white;
+      margin-bottom: 8px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    p {
+      color: white;
+    }
+  }
+
+  button {
+    width: 100%;
+    display: block;
+    background: white;
+    color: #111;
+    border: none;
+    border-left: 6px solid #0b63ce;
+    padding: 18px;
+    margin-bottom: 14px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #f1f5f9;
+  }
+
+  .btn-volver {
+    color: #0b63ce;
+    text-align: center;
+  }
+}
+
+.admin-main {
+  background: white;
+  border: 1px solid #d7dce3;
+  padding: 28px;
+  margin-bottom: 50px; /* Espacio debajo de la sección */
+  margin-top: 50px;    /* Espacio arriba de la sección */
+
+  header {
+    margin-bottom: 22px;
+
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    p {
+      color: #555;
+    }
+  }
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+
+  article {
+    border: 1px solid #d7dce3;
+    padding: 20px;
+    background: white;
+  }
+
+  strong {
+    font-size: 32px;
+    color: #0b63ce;
+  }
+
+  p {
+    margin-top: 8px;
+    color: #555;
+  }
+}
+
+.admin-graficos {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+  margin-bottom: 22px;
+
+  article {
+    border: 1px solid #d7dce3;
+    background: white;
+    padding: 22px;
+  }
+}
+
+.bar-chart {
+  height: 190px;
+  display: flex;
+  align-items: end;
+  gap: 28px;
+  padding-top: 20px;
+
+  span {
+    width: 55px;
+    background: #0b63ce;
+    color: white;
+    text-align: center;
+    padding-top: 8px;
+  }
+
+  span:last-child {
+    background: #ef4444;
+  }
+}
+
+.baja,
+.media,
+.alta,
+.critica {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 8px;
+}
+
+.baja { background: #22c55e; }
+.media { background: #facc15; }
+.alta { background: #f97316; }
+.critica { background: #ef4444; }
+
+.admin-tabla {
+  border: 1px solid #d7dce3;
+  background: white;
+  padding: 22px;
+  margin-bottom: 50px; /* Espacio debajo de la sección */
+  margin-top: 50px;    /* Espacio arriba de la sección */
+  max-height: calc(100vh - 60px); /* Limita el alto de la tabla al tamaño de la pantalla menos los paddings */
+  overflow-y: auto;               /* Agrega scroll vertical automático si los datos exceden el alto */
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    
+  }
+
+  th,
+  td {
+    border: 1px solid #d7dce3;
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    background: #f0f4f8;
+  }
+}
+
+@media (max-width: 900px) {
+  .admin-page,
+  .admin-stats,
+  .admin-graficos {
+    grid-template-columns: 1fr;
+  }
+}

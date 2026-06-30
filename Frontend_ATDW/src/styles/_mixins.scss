@@ -1,0 +1,139 @@
+@import './variables';
+
+// Mixins para botones
+@mixin boton {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $espaciado-sm $espaciado-md;
+  font-size: $fuente-size-base;
+  font-weight: $fuente-weight-semibold;
+  border: none;
+  border-radius: $border-radius-md;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+
+  &:focus {
+    outline: 2px solid $color-primario;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@mixin btn-primario {
+  @include btn-base;
+  background-color: $color-primario;
+  color: $color-blanco;
+
+  &:hover {
+    background-color: $color-primario-dark;
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+@mixin btn-secundario {
+  @include btn-base;
+  background-color: transparent;
+  color: $color-primario;
+  border: 2px solid $color-primario;
+
+  &:hover {
+    background-color: $color-secundario;
+  }
+
+  &:disabled {
+    border-color: #ccc;
+    color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+// Mixins para tarjetas
+@mixin card {
+  background-color: $color-blanco;
+  border-radius: $border-radius-lg;
+  padding: $espaciado-lg;
+  box-shadow: $sombra-md;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: $sombra-lg;
+    transform: translateY(-2px);
+  }
+}
+
+// Mixin para flexbox
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Mixin para grid
+@mixin grid-responsive($columns: 3, $gap: $espaciado-md) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $gap;
+}
+
+// Mixin para truncar texto
+@mixin truncate-text($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+}
+
+// Mixin para responsive
+@mixin responsive-desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin responsive-tablet {
+  @media (min-width: $breakpoint-tablet) and (max-width: ($breakpoint-desktop - 1)) {
+    @content;
+  }
+}
+
+@mixin responsive-mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}

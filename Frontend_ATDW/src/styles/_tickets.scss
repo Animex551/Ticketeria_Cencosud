@@ -1,0 +1,27 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+.tickets-page {
+  min-height: calc(100vh - 200px);
+  padding: $espaciado-xxl $espaciado-md;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $espaciado-md;
+  }
+
+  h1 {
+    color: $color-primario;
+    margin-bottom: $espaciado-lg;
+  }
+
+  p {
+    margin-bottom: $espaciado-md;
+    color: $color-texto-claro;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: $espaciado-md;
+  }
+}
