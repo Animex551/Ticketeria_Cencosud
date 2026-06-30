@@ -1,0 +1,1504 @@
+openapi: 3.0.3
+info:
+  title: Mi API
+  version: 1.0.0
+  description: Documentación de mi API con DRF Spectacular
+paths:
+  /api/adjuntos/:
+    get:
+      operationId: adjuntos_list
+      tags:
+      - adjuntos
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Adjunto'
+          description: ''
+    post:
+      operationId: adjuntos_create
+      tags:
+      - adjuntos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Adjunto'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Adjunto'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Adjunto'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adjunto'
+          description: ''
+  /api/adjuntos/{id}/:
+    get:
+      operationId: adjuntos_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este adjunto.
+        required: true
+      tags:
+      - adjuntos
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adjunto'
+          description: ''
+    put:
+      operationId: adjuntos_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este adjunto.
+        required: true
+      tags:
+      - adjuntos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Adjunto'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Adjunto'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Adjunto'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adjunto'
+          description: ''
+    patch:
+      operationId: adjuntos_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este adjunto.
+        required: true
+      tags:
+      - adjuntos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAdjunto'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAdjunto'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAdjunto'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adjunto'
+          description: ''
+    delete:
+      operationId: adjuntos_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este adjunto.
+        required: true
+      tags:
+      - adjuntos
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/bitacora-adjuntos/:
+    get:
+      operationId: bitacora_adjuntos_list
+      tags:
+      - bitacora-adjuntos
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitacoraAdjuntos'
+          description: ''
+    post:
+      operationId: bitacora_adjuntos_create
+      tags:
+      - bitacora-adjuntos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BitacoraAdjuntos'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/BitacoraAdjuntos'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/BitacoraAdjuntos'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BitacoraAdjuntos'
+          description: ''
+  /api/bitacora-adjuntos/{id}/:
+    get:
+      operationId: bitacora_adjuntos_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este bitacora adjuntos.
+        required: true
+      tags:
+      - bitacora-adjuntos
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BitacoraAdjuntos'
+          description: ''
+    put:
+      operationId: bitacora_adjuntos_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este bitacora adjuntos.
+        required: true
+      tags:
+      - bitacora-adjuntos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BitacoraAdjuntos'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/BitacoraAdjuntos'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/BitacoraAdjuntos'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BitacoraAdjuntos'
+          description: ''
+    patch:
+      operationId: bitacora_adjuntos_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este bitacora adjuntos.
+        required: true
+      tags:
+      - bitacora-adjuntos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedBitacoraAdjuntos'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedBitacoraAdjuntos'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedBitacoraAdjuntos'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BitacoraAdjuntos'
+          description: ''
+    delete:
+      operationId: bitacora_adjuntos_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este bitacora adjuntos.
+        required: true
+      tags:
+      - bitacora-adjuntos
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/bitacoras/:
+    get:
+      operationId: bitacoras_list
+      tags:
+      - bitacoras
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BitacoraTicket'
+          description: ''
+    post:
+      operationId: bitacoras_create
+      tags:
+      - bitacoras
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BitacoraTicket'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/BitacoraTicket'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/BitacoraTicket'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BitacoraTicket'
+          description: ''
+  /api/bitacoras/{id}/:
+    get:
+      operationId: bitacoras_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este bitacora ticket.
+        required: true
+      tags:
+      - bitacoras
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BitacoraTicket'
+          description: ''
+    put:
+      operationId: bitacoras_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este bitacora ticket.
+        required: true
+      tags:
+      - bitacoras
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BitacoraTicket'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/BitacoraTicket'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/BitacoraTicket'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BitacoraTicket'
+          description: ''
+    patch:
+      operationId: bitacoras_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este bitacora ticket.
+        required: true
+      tags:
+      - bitacoras
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedBitacoraTicket'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedBitacoraTicket'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedBitacoraTicket'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BitacoraTicket'
+          description: ''
+    delete:
+      operationId: bitacoras_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este bitacora ticket.
+        required: true
+      tags:
+      - bitacoras
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/login/:
+    post:
+      operationId: login_create
+      tags:
+      - login
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/schema/:
+    get:
+      operationId: schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - ug
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - schema
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/tickets/:
+    get:
+      operationId: tickets_list
+      tags:
+      - tickets
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ticket'
+          description: ''
+    post:
+      operationId: tickets_create
+      tags:
+      - tickets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+          description: ''
+  /api/tickets/{id}/:
+    get:
+      operationId: tickets_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este tickets.
+        required: true
+      tags:
+      - tickets
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+          description: ''
+    put:
+      operationId: tickets_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este tickets.
+        required: true
+      tags:
+      - tickets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Ticket'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+          description: ''
+    patch:
+      operationId: tickets_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este tickets.
+        required: true
+      tags:
+      - tickets
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedTicket'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedTicket'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedTicket'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticket'
+          description: ''
+    delete:
+      operationId: tickets_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este tickets.
+        required: true
+      tags:
+      - tickets
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/tipo-falla/:
+    get:
+      operationId: tipo_falla_list
+      tags:
+      - tipo-falla
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TipoFalla'
+          description: ''
+    post:
+      operationId: tipo_falla_create
+      tags:
+      - tipo-falla
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TipoFalla'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TipoFalla'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TipoFalla'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TipoFalla'
+          description: ''
+  /api/tipo-falla/{id}/:
+    get:
+      operationId: tipo_falla_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este tipo falla.
+        required: true
+      tags:
+      - tipo-falla
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TipoFalla'
+          description: ''
+    put:
+      operationId: tipo_falla_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este tipo falla.
+        required: true
+      tags:
+      - tipo-falla
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TipoFalla'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TipoFalla'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TipoFalla'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TipoFalla'
+          description: ''
+    patch:
+      operationId: tipo_falla_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este tipo falla.
+        required: true
+      tags:
+      - tipo-falla
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedTipoFalla'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedTipoFalla'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedTipoFalla'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TipoFalla'
+          description: ''
+    delete:
+      operationId: tipo_falla_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este tipo falla.
+        required: true
+      tags:
+      - tipo-falla
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/usuarios/:
+    get:
+      operationId: usuarios_list
+      tags:
+      - usuarios
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Usuarios'
+          description: ''
+    post:
+      operationId: usuarios_create
+      tags:
+      - usuarios
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Usuarios'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Usuarios'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Usuarios'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuarios'
+          description: ''
+  /api/usuarios/{email}/:
+    get:
+      operationId: usuarios_retrieve
+      parameters:
+      - in: path
+        name: email
+        schema:
+          type: string
+        description: Un valor único que identifique este usuarios.
+        required: true
+      tags:
+      - usuarios
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuarios'
+          description: ''
+    put:
+      operationId: usuarios_update
+      parameters:
+      - in: path
+        name: email
+        schema:
+          type: string
+        description: Un valor único que identifique este usuarios.
+        required: true
+      tags:
+      - usuarios
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Usuarios'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Usuarios'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Usuarios'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuarios'
+          description: ''
+    patch:
+      operationId: usuarios_partial_update
+      parameters:
+      - in: path
+        name: email
+        schema:
+          type: string
+        description: Un valor único que identifique este usuarios.
+        required: true
+      tags:
+      - usuarios
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUsuarios'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUsuarios'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUsuarios'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuarios'
+          description: ''
+    delete:
+      operationId: usuarios_destroy
+      parameters:
+      - in: path
+        name: email
+        schema:
+          type: string
+        description: Un valor único que identifique este usuarios.
+        required: true
+      tags:
+      - usuarios
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/zonas/:
+    get:
+      operationId: zonas_list
+      tags:
+      - zonas
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Zonas'
+          description: ''
+    post:
+      operationId: zonas_create
+      tags:
+      - zonas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Zonas'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Zonas'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Zonas'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Zonas'
+          description: ''
+  /api/zonas/{id}/:
+    get:
+      operationId: zonas_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este zonas.
+        required: true
+      tags:
+      - zonas
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Zonas'
+          description: ''
+    put:
+      operationId: zonas_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este zonas.
+        required: true
+      tags:
+      - zonas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Zonas'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Zonas'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Zonas'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Zonas'
+          description: ''
+    patch:
+      operationId: zonas_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este zonas.
+        required: true
+      tags:
+      - zonas
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedZonas'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedZonas'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedZonas'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Zonas'
+          description: ''
+    delete:
+      operationId: zonas_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: Un valor de entero único que identifique este zonas.
+        required: true
+      tags:
+      - zonas
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Adjunto:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        path:
+          type: string
+          format: uri
+          nullable: true
+        id_tickets:
+          type: integer
+      required:
+      - id
+      - id_tickets
+    BitacoraAdjuntos:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        path:
+          type: string
+          maxLength: 255
+        id_bitacora:
+          type: integer
+      required:
+      - id
+      - id_bitacora
+      - path
+    BitacoraTicket:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        commit:
+          type: string
+          maxLength: 255
+        descripcion:
+          type: string
+        fecha_registro:
+          type: string
+          format: date-time
+          readOnly: true
+        id_ticket:
+          type: integer
+        tecnico_id:
+          type: string
+      required:
+      - commit
+      - descripcion
+      - fecha_registro
+      - id
+      - id_ticket
+      - tecnico_id
+    PatchedAdjunto:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        path:
+          type: string
+          format: uri
+          nullable: true
+        id_tickets:
+          type: integer
+    PatchedBitacoraAdjuntos:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        path:
+          type: string
+          maxLength: 255
+        id_bitacora:
+          type: integer
+    PatchedBitacoraTicket:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        commit:
+          type: string
+          maxLength: 255
+        descripcion:
+          type: string
+        fecha_registro:
+          type: string
+          format: date-time
+          readOnly: true
+        id_ticket:
+          type: integer
+        tecnico_id:
+          type: string
+    PatchedTicket:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        id_tecnico:
+          type: string
+          nullable: true
+        nombre:
+          type: string
+          maxLength: 255
+        estado:
+          type: string
+          maxLength: 255
+        fecha_creacion:
+          type: string
+          format: date-time
+          readOnly: true
+        descripcion:
+          type: string
+        id_cliente:
+          type: string
+        id_zona_problema:
+          type: integer
+        id_falla:
+          type: integer
+    PatchedTipoFalla:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        tipo:
+          type: string
+          maxLength: 255
+        prioridad:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+    PatchedUsuarios:
+      type: object
+      properties:
+        email:
+          type: string
+          maxLength: 255
+        username:
+          type: string
+          maxLength: 255
+        password:
+          type: string
+          writeOnly: true
+          title: Contraseña
+          maxLength: 128
+        is_IT:
+          type: boolean
+        is_admin:
+          type: boolean
+    PatchedZonas:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        sucursal:
+          type: string
+          maxLength: 255
+        sector:
+          type: string
+          maxLength: 255
+    Ticket:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        id_tecnico:
+          type: string
+          nullable: true
+        nombre:
+          type: string
+          maxLength: 255
+        estado:
+          type: string
+          maxLength: 255
+        fecha_creacion:
+          type: string
+          format: date-time
+          readOnly: true
+        descripcion:
+          type: string
+        id_cliente:
+          type: string
+        id_zona_problema:
+          type: integer
+        id_falla:
+          type: integer
+      required:
+      - descripcion
+      - estado
+      - fecha_creacion
+      - id
+      - id_cliente
+      - id_falla
+      - id_zona_problema
+      - nombre
+    TipoFalla:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        tipo:
+          type: string
+          maxLength: 255
+        prioridad:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - id
+      - prioridad
+      - tipo
+    Usuarios:
+      type: object
+      properties:
+        email:
+          type: string
+          maxLength: 255
+        username:
+          type: string
+          maxLength: 255
+        password:
+          type: string
+          writeOnly: true
+          title: Contraseña
+          maxLength: 128
+        is_IT:
+          type: boolean
+        is_admin:
+          type: boolean
+      required:
+      - email
+      - password
+      - username
+    Zonas:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        sucursal:
+          type: string
+          maxLength: 255
+        sector:
+          type: string
+          maxLength: 255
+      required:
+      - id
+      - sector
+      - sucursal
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'mi_api',
-
+    "drf_spectacular",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -43,6 +43,17 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Mi API',
+    'DESCRIPTION': 'Documentación de mi API con DRF Spectacular',
+    'VERSION': '1.0.0',
+}
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware', 
@@ -87,9 +98,9 @@ DATABASES = {
     "default": {
         "HOST": "localhost",
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "",
+        "NAME": "Ticketeria_c",
         "USER": "postgres",
-        "PASSWORD": "", 
+        "PASSWORD": "2823", 
         "PORT": "5432",
     }
 }
