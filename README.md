@@ -9,6 +9,7 @@ pillow==12.2.0
 psycopg2-binary==2.9.10
 sqlparse==0.5.5
 tzdata==2026.2
+drf-spectacular
 para correr el  server se usan los comandos:
 crear una base de datos vacia postgres
 editar settings.py con los datos de la base de datos para que funcione
